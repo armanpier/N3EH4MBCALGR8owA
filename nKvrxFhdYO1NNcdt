@@ -96,13 +96,13 @@
     {
       "type": "hysteria2",
       "tag": "hy2-sb",
-      "server": "194.36.170.121",
-      "server_port": 5082,
+      "server": "91.223.169.120",
+      "server_port": 443,
       "obfs": {
         "type": "salamander",
-        "password": "70afe05d-9789-497e-8234-5d25b6b15fdc"
+        "password": "c94c15c3-f2f1-496c-abd1-9981eb0311bd"
       },
-      "password": "70afe05d-9789-497e-8234-5d25b6b15fdc",
+      "password": "c94c15c3-f2f1-496c-abd1-9981eb0311bd",
       "tls": {
         "enabled": true,
         "server_name": "www.bing.com",
@@ -114,9 +114,9 @@
       "type": "tuic",
       "tag": "tuic5-sb",
       "server": "194.36.170.121",
-      "server_port": 5092,
-      "uuid": "70afe05d-9789-497e-8234-5d25b6b15fdc",
-      "password": "70afe05d-9789-497e-8234-5d25b6b15fdc",
+      "server_port": 2053,
+      "uuid": "c94c15c3-f2f1-496c-abd1-9981eb0311bd",
+      "password": "c94c15c3-f2f1-496c-abd1-9981eb0311bd",
       "congestion_control": "bbr",
       "udp_relay_mode": "native",
       "heartbeat": "10s",
