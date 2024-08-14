@@ -88,10 +88,80 @@
       "tag": "select",
       "outbounds": [
         "auto",
+        "vless-tcp-reality",
+        "vmess-sb",
+        "vmess-ws-+ARGO-Tunnel",
         "hy2-sb",
         "tuic5-sb"
       ],
       "default": "auto"
+    },
+    {
+      "type": "vless",
+      "tag": "vless-tcp-reality",
+      "server": "194.36.170.121",
+      "server_port": 20010,
+      "uuid": "70afe05d-9789-497e-8234-5d25b6b15fdc",
+      "flow": "xtls-rprx-vision",
+      "tls": {
+        "enabled": true,
+        "server_name": "www.yahoo.com",
+        "utls": {
+          "enabled": true,
+          "fingerprint": "chrome"
+        },
+        "reality": {
+          "enabled": true,
+          "public_key": "cPpsBnA4gGnjHY6eSukPvRGvhQ0wSekvsOWbuC6yvS0",
+          "short_id": "8e840f63260ddb17"
+        }
+      }
+    },
+    {
+      "type": "vmess",
+      "tag": "vmess-sb",
+      "server": "194.36.170.121",
+      "server_port": 5052,
+      "uuid": "70afe05d-9789-497e-8234-5d25b6b15fdc",
+      "security": "auto",
+      "tls": {
+        "server_name": "194.36.170.121",
+        "insecure": true,
+        "utls": {
+          "enabled": true,
+          "fingerprint": "chrome"
+        }
+      },
+      "transport": {
+        "type": "ws",
+        "path": "70afe05d-9789-497e-8234-5d25b6b15fdc",
+        "headers": {
+          "Host": "194.36.170.121"
+        }
+      }
+    },
+    {
+      "type": "vmess",
+      "tag": "vmess-ws-+ARGO-Tunnel",
+      "server": "104.31.16.60",
+      "server_port": 443,
+      "uuid": "70afe05d-9789-497e-8234-5d25b6b15fdc",
+      "security": "auto",
+      "tls": {
+        "enabled": true,
+        "server_name": "duck-drinking-consider-plumbing.trycloudflare.com",
+        "utls": {
+          "enabled": true,
+          "fingerprint": "chrome"
+        }
+      },
+      "transport": {
+        "type": "ws",
+        "path": "70afe05d-9789-497e-8234-5d25b6b15fdc",
+        "headers": {
+          "Host": "duck-drinking-consider-plumbing.trycloudflare.com"
+        }
+      }
     },
     {
       "type": "hysteria2",
@@ -99,9 +169,9 @@
       "server": "194.36.170.121",
       "server_port": 5082,
       "obfs": {
-        "type": "salamander",
-        "password": "70afe05d-9789-497e-8234-5d25b6b15fdc"
-      },
+	    "type": "salamander",
+	    "password": "70afe05d-9789-497e-8234-5d25b6b15fdc"
+	  },
       "password": "70afe05d-9789-497e-8234-5d25b6b15fdc",
       "tls": {
         "enabled": true,
@@ -138,6 +208,20 @@
     {
       "type": "dns",
       "tag": "dns-out"
+    },
+    {
+      "type": "urltest",
+      "tag": "auto",
+      "outbounds": [
+        "vless-tcp-reality",
+        "vmess-sb",
+        "vmess-ws-+ARGO-Tunnel",
+        "hy2-sb",
+        "tuic5-sb"
+      ],
+      "url": "https://www.gstatic.com/generate_204",
+      "interval": "1m0s",
+      "tolerance": 50
     }
   ],
   "route": {
