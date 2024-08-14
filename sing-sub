@@ -39,11 +39,11 @@
         "server": "localdns"
       },
       {
-        "rule_set": "geosite-cn",
+        "rule_set": "geosite-ir",
         "server": "localdns"
       },
       {
-        "rule_set": "geosite-geolocation-!cn",
+        "rule_set": "geosite-ir",
         "server": "proxydns"
       },
       {
@@ -51,7 +51,7 @@
           "A",
           "AAAA"
         ],
-        "rule_set": "geosite-geolocation-!cn",
+        "rule_set": "geosite-ir",
         "server": "dns_fakeip"
       }
     ],
@@ -166,11 +166,11 @@
         "outbound": "select"
       },
       {
-        "rule_set": "geoip-ir",
+        "rule_set": "geosite-ir",
         "outbound": "direct"
       },
       {
-        "rule_set": "geosite-ir",
+        "rule_set": "geoip-ir",
         "outbound": "direct"
       },
       {
@@ -185,25 +185,17 @@
     "rule_set": [
       {
         "type": "remote",
-        "tag": "geosite-geolocation-!cn",
+        "tag": "geosite-ir",
         "format": "binary",
-        "url": "https://cdn.jsdelivr.net/gh/MetaCubeX/meta-rules-dat@sing/geo/geosite/geolocation-!cn.srs",
+        "url": "https://cdn.jsdelivr.net/gh/chocolate4u/Iran-sing-box-rules@rule-set/geosite-ir.srs",
         "download_detour": "select",
         "update_interval": "24h0m0s"
       },
       {
         "type": "remote",
-        "tag": "geosite-cn",
+        "tag": "geoip-ir",
         "format": "binary",
-        "url": "https://cdn.jsdelivr.net/gh/MetaCubeX/meta-rules-dat@sing/geo/geosite/geolocation-cn.srs",
-        "download_detour": "select",
-        "update_interval": "24h0m0s"
-      },
-      {
-        "type": "remote",
-        "tag": "geoip-cn",
-        "format": "binary",
-        "url": "https://cdn.jsdelivr.net/gh/MetaCubeX/meta-rules-dat@sing/geo/geoip/cn.srs",
+        "url": "https://cdn.jsdelivr.net/gh/chocolate4u/Iran-sing-box-rules@rule-set/geoip-ir.srs",
         "download_detour": "select",
         "update_interval": "24h0m0s"
       }
