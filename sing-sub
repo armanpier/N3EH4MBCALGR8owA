@@ -121,6 +121,10 @@
   "route": {
     "rules": [
       {
+        "protocol": "dns",
+        "outbound": "dns-out"
+      },
+      {
         "clash_mode": "Direct",
         "outbound": "direct"
       },
@@ -129,16 +133,20 @@
         "outbound": "hy2-sb"
       },
       {
-        "rule_set": "geoip:ir",
+        "rule_set": "geoip-cn",
         "outbound": "direct"
       },
       {
-        "rule_set": "geosite:category-ir",
+        "rule_set": "geosite-cn",
+        "outbound": "direct"
+      },
+      {
+        "ip_is_private": true,
         "outbound": "direct"
       },
       {
         "rule_set": "geosite-geolocation-!cn",
-        "outbound": "hy2-sb"
+        "outbound": "tuic5-sb"
       }
     ],
     "rule_set": [
@@ -147,7 +155,7 @@
         "tag": "geosite-geolocation-!cn",
         "format": "binary",
         "url": "https://cdn.jsdelivr.net/gh/MetaCubeX/meta-rules-dat@sing/geo/geosite/geolocation-!cn.srs",
-        "download_detour": "select",
+        "download_detour": "hy2-sb",
         "update_interval": "24h0m0s"
       },
       {
@@ -155,7 +163,7 @@
         "tag": "geosite-cn",
         "format": "binary",
         "url": "https://cdn.jsdelivr.net/gh/MetaCubeX/meta-rules-dat@sing/geo/geosite/geolocation-cn.srs",
-        "download_detour": "select",
+        "download_detour": "tuic5-sb",
         "update_interval": "24h0m0s"
       },
       {
@@ -163,11 +171,11 @@
         "tag": "geoip-cn",
         "format": "binary",
         "url": "https://cdn.jsdelivr.net/gh/MetaCubeX/meta-rules-dat@sing/geo/geoip/cn.srs",
-        "download_detour": "select",
+        "download_detour": "hy2-sb",
         "update_interval": "24h0m0s"
       }
     ],
-    "final": "hy2-sb",
+    "final": "tuic5-sb",
     "auto_detect_interface": true
   },
   "experimental": {
