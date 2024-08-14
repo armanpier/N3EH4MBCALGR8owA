@@ -178,7 +178,7 @@
         "outbound": "direct"
       },
       {
-        "rule_set": "geosite-geolocation-!cn",
+        "rule_set": "geosite-ir",
         "outbound": "select"
       }
     ],
