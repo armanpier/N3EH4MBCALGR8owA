@@ -89,7 +89,7 @@
       "outbounds": [
         "auto",
         "hy2-sb",
-        "tuic5-sb",
+        "tuic5-sb"
       ],
       "default": "auto"
     },
@@ -99,9 +99,9 @@
       "server": "194.36.170.121",
       "server_port": 5082,
       "obfs": {
-	    "type": "salamander",
-	    "password": "70afe05d-9789-497e-8234-5d25b6b15fdc"
-	  },
+        "type": "salamander",
+        "password": "70afe05d-9789-497e-8234-5d25b6b15fdc"
+      },
       "password": "70afe05d-9789-497e-8234-5d25b6b15fdc",
       "tls": {
         "enabled": true,
@@ -129,101 +129,4 @@
     },
     {
       "type": "direct",
-      "tag": "direct"
-    },
-    {
-      "type": "block",
-      "tag": "block"
-    },
-    {
-      "type": "dns",
-      "tag": "dns-out"
-    },
-    {
-      "type": "urltest",
-      "tag": "auto",
-      "outbounds": [
-        "vless-tcp-reality",
-        "vmess-sb",
-        "vmess-ws-+ARGO-Tunnel",
-        "hy2-sb",
-        "tuic5-sb"
-      ],
-      "url": "https://www.gstatic.com/generate_204",
-      "interval": "1m0s",
-      "tolerance": 50
-    }
-  ],
-  "route": {
-    "rules": [
-      {
-        "protocol": "dns",
-        "outbound": "dns-out"
-      },
-      {
-        "clash_mode": "Direct",
-        "outbound": "direct"
-      },
-      {
-        "clash_mode": "Global",
-        "outbound": "select"
-      },
-      {
-        "rule_set": "geoip-cn",
-        "outbound": "direct"
-      },
-      {
-        "rule_set": "geosite-cn",
-        "outbound": "direct"
-      },
-      {
-        "ip_is_private": true,
-        "outbound": "direct"
-      },
-      {
-        "rule_set": "geosite-geolocation-!cn",
-        "outbound": "select"
-      }
-    ],
-    "rule_set": [
-      {
-        "type": "remote",
-        "tag": "geosite-geolocation-!cn",
-        "format": "binary",
-        "url": "https://cdn.jsdelivr.net/gh/MetaCubeX/meta-rules-dat@sing/geo/geosite/geolocation-!cn.srs",
-        "download_detour": "select",
-        "update_interval": "24h0m0s"
-      },
-      {
-        "type": "remote",
-        "tag": "geosite-cn",
-        "format": "binary",
-        "url": "https://cdn.jsdelivr.net/gh/MetaCubeX/meta-rules-dat@sing/geo/geosite/geolocation-cn.srs",
-        "download_detour": "select",
-        "update_interval": "24h0m0s"
-      },
-      {
-        "type": "remote",
-        "tag": "geoip-cn",
-        "format": "binary",
-        "url": "https://cdn.jsdelivr.net/gh/MetaCubeX/meta-rules-dat@sing/geo/geoip/cn.srs",
-        "download_detour": "select",
-        "update_interval": "24h0m0s"
-      }
-    ],
-    "final": "select",
-    "auto_detect_interface": true
-  },
-  "experimental": {
-    "cache_file": {
-      "enabled": true,
-      "path": "cache.db",
-      "store_fakeip": true
-    },
-    "clash_api": {
-      "external_controller": "127.0.0.1:9090",
-      "external_ui": "ui",
-      "default_mode": "Rule"
-    }
-  }
-}
+      "tag": "dire
