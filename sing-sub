@@ -138,6 +138,17 @@
     {
       "type": "dns",
       "tag": "dns-out"
+    },
+    {
+      "type": "urltest",
+      "tag": "auto",
+      "outbounds": [
+        "hy2-sb",
+        "tuic5-sb"
+      ],
+      "url": "https://www.gstatic.com/generate_204",
+      "interval": "1m0s",
+      "tolerance": 50
     }
   ],
   "route": {
