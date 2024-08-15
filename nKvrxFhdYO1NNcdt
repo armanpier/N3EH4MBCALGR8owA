@@ -118,13 +118,6 @@
        {
          "download_detour": "direct",
          "format": "binary",
-         "tag": "geosite-ads",
-         "type": "remote",
-         "url": "https://testingcf.jsdelivr.net/gh/MetaCubeX/meta-rules-dat@sing/geo/geosite/category-ads-all.srs"
-       },
-       {
-         "download_detour": "direct",
-         "format": "binary",
          "tag": "geosite-private",
          "type": "remote",
          "url": "https://testingcf.jsdelivr.net/gh/MetaCubeX/meta-rules-dat@sing/geo/geosite/private.srs"
@@ -171,12 +164,6 @@
            "geoip-private",
            "geosite-ir",
            "geoip-ir"
-         ]
-       },
-       {
-         "outbound": "block",
-         "rule_set": [
-           "geosite-ads"
          ]
        }
      ]
