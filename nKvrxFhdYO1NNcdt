@@ -66,7 +66,8 @@
        "outbounds": [
          "auto",
          "direct",
-         "hy-singbox"
+         "hy-singbox",
+         "tuic-11928"
        ],
        "tag": "proxy",
        "type": "selector"
@@ -74,7 +75,8 @@
      {
        "interval": "10m",
        "outbounds": [
-         "hy-singbox"
+         "hy-singbox",
+         "tuic-11928"
        ],
        "tag": "auto",
        "tolerance": 50,
@@ -109,6 +111,24 @@
          "insecure": true
        },
        "type": "hysteria2"
+     },
+     {
+       "congestion_control": "bbr",
+       "password": "bYW3wLz4dx",
+       "server": "91.223.169.100",
+       "server_port": 2053,
+       "tag": "tuic-11928",
+       "tls": {
+         "alpn": [
+           "h3"
+         ],
+         "enabled": true,
+         "insecure": true,
+         "server_name": "bing.com"
+       },
+       "type": "tuic",
+       "uuid": "0fbcc683-ad5d-4cb6-b047-9649365b41b4",
+       "zero_rtt_handshake": true
      }
    ],
    "route": {
