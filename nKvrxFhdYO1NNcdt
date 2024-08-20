@@ -14,11 +14,15 @@
          "source_ip_cidr": [
            "172.19.0.0/30"
          ]
+       },
+       {
+         "clash_mode": "Direct",
+         "server": "direct-dns"
        }
      ],
      "servers": [
        {
-         "address": "tcp://8.8.8.8",
+         "address": "tcp://8.8.4.4",
          "address_resolver": "local-dns",
          "detour": "proxy",
          "tag": "proxy-dns"
@@ -31,6 +35,11 @@
        {
          "address": "rcode://success",
          "tag": "block"
+       },
+       {
+         "address": "8.8.4.4",
+         "detour": "direct",
+         "tag": "direct-dns"
        }
      ],
      "strategy": "prefer_ipv4"
@@ -66,8 +75,7 @@
        "outbounds": [
          "auto",
          "direct",
-         "hy-singbox",
-         "tuic-11928"
+         "hysteria_"
        ],
        "tag": "proxy",
        "type": "selector"
@@ -75,8 +83,7 @@
      {
        "interval": "10m",
        "outbounds": [
-         "hy-singbox",
-         "tuic-11928"
+         "hysteria_"
        ],
        "tag": "auto",
        "tolerance": 50,
@@ -97,38 +104,22 @@
      },
      {
        "obfs": {
-         "password": "dfsgsdg3536446hj36hrfhg",
+         "password": "fasffsaaf345235",
          "type": "salamander"
        },
-       "password": "bYW3wLz4dx",
-       "server": "91.223.169.100",
+       "password": "hq2rib0O6X",
+       "server": "103.45.246.233",
        "server_port": 443,
-       "tag": "hy-singbox",
-       "tls": {
-         "disable_sni": true,
-         "ech": {},
-         "enabled": true,
-         "insecure": true
-       },
-       "type": "hysteria2"
-     },
-     {
-       "congestion_control": "bbr",
-       "password": "bYW3wLz4dx",
-       "server": "91.223.169.100",
-       "server_port": 2053,
-       "tag": "tuic-11928",
+       "tag": "hysteria_",
        "tls": {
          "alpn": [
            "h3"
          ],
          "enabled": true,
          "insecure": true,
-         "server_name": "bing.com"
+         "server_name": "www.rule.io"
        },
-       "type": "tuic",
-       "uuid": "0fbcc683-ad5d-4cb6-b047-9649365b41b4",
-       "zero_rtt_handshake": true
+       "type": "hysteria2"
      }
    ],
    "route": {
@@ -138,23 +129,9 @@
        {
          "download_detour": "direct",
          "format": "binary",
-         "tag": "geosite-private",
-         "type": "remote",
-         "url": "https://testingcf.jsdelivr.net/gh/MetaCubeX/meta-rules-dat@sing/geo/geosite/private.srs"
-       },
-       {
-         "download_detour": "direct",
-         "format": "binary",
          "tag": "geosite-ir",
          "type": "remote",
          "url": "https://testingcf.jsdelivr.net/gh/MetaCubeX/meta-rules-dat@sing/geo/geosite/category-ir.srs"
-       },
-       {
-         "download_detour": "direct",
-         "format": "binary",
-         "tag": "geoip-private",
-         "type": "remote",
-         "url": "https://testingcf.jsdelivr.net/gh/MetaCubeX/meta-rules-dat@sing/geo/geoip/private.srs"
        },
        {
          "download_detour": "direct",
@@ -180,8 +157,6 @@
        {
          "outbound": "direct",
          "rule_set": [
-           "geosite-private",
-           "geoip-private",
            "geosite-ir",
            "geoip-ir"
          ]
