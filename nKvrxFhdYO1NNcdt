@@ -103,10 +103,6 @@
        "type": "block"
      },
      {
-       "obfs": {
-         "password": "fasffsaaf345235",
-         "type": "salamander"
-       },
        "password": "hq2rib0O6X",
        "server": "103.45.246.233",
        "server_port": 443,
