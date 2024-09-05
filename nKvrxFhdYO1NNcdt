@@ -37,7 +37,7 @@
          "tag": "block"
        },
        {
-         "address": "8.8.4.4",
+         "address": "tcp://8.8.4.4",
          "detour": "direct",
          "tag": "direct-dns"
        }
@@ -104,7 +104,7 @@
      },
      {
        "password": "hq2rib0O6X",
-       "server": "45.91.171.110",
+       "server": "185.139.228.97",
        "server_port": 443,
        "tag": "hysteria_",
        "tls": {
