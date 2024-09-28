@@ -75,7 +75,8 @@
        "outbounds": [
          "auto",
          "direct",
-         "hysteria_"
+         "1.hysteria_",
+         "1.hysteria2-WG"
        ],
        "tag": "proxy",
        "type": "selector"
@@ -83,7 +84,8 @@
      {
        "interval": "10m",
        "outbounds": [
-         "hysteria_"
+         "1.hysteria_",
+         "1.hysteria2-WG"
        ],
        "tag": "auto",
        "tolerance": 50,
@@ -104,9 +106,24 @@
      },
      {
        "password": "hq2rib0O6X",
-       "server": "hyp.pneumonoultramicroscopicsilicovolcanoconiosisisnotadisease.blog",
+       "server": "45.91.171.77",
        "server_port": 443,
-       "tag": "hysteria_",
+       "tag": "1.hysteria_",
+       "tls": {
+         "alpn": [
+           "h3"
+         ],
+         "enabled": true,
+         "insecure": true,
+         "server_name": "www.rule.io"
+       },
+       "type": "hysteria2"
+     },
+     {
+       "password": "hq2rib0O6X",
+       "server": "45.91.171.77",
+       "server_port": 800,
+       "tag": "1.hysteria2-WG",
        "tls": {
          "alpn": [
            "h3"
