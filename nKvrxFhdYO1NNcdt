@@ -76,7 +76,7 @@
          "auto",
          "direct",
          "1.hysteria_",
-         "1.hysteria2-WG"
+         "2.hysteria_"
        ],
        "tag": "proxy",
        "type": "selector"
@@ -85,7 +85,7 @@
        "interval": "10m",
        "outbounds": [
          "1.hysteria_",
-         "1.hysteria2-WG"
+         "2.hysteria_"
        ],
        "tag": "auto",
        "tolerance": 50,
@@ -121,9 +121,9 @@
      },
      {
        "password": "hq2rib0O6X",
-       "server": "45.91.171.77",
-       "server_port": 800,
-       "tag": "1.hysteria2-WG",
+       "server": "45.91.171.85",
+       "server_port": 443,
+       "tag": "2.hysteria_",
        "tls": {
          "alpn": [
            "h3"
