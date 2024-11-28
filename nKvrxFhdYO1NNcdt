@@ -88,7 +88,12 @@
       "outbounds": [
         "auto",
         "direct",
-        "1.Hy_20"
+        "1.hysteria_",
+        "2.hysteria_",
+        "3.hysteria_",
+        "1.Hy_20",
+        "2.Hy_20",
+        "3.Hy_20"
       ],
       "tag": "proxy",
       "type": "selector"
@@ -96,7 +101,12 @@
     {
       "interval": "10m",
       "outbounds": [
-        "1.Hy_20"
+        "1.hysteria_",
+        "2.hysteria_",
+        "3.hysteria_",
+        "1.Hy_20",
+        "2.Hy_20",
+        "3.Hy_20"
       ],
       "tag": "auto",
       "tolerance": 50,
@@ -117,9 +127,84 @@
     },
     {
       "password": "hq2rib0O6X",
+      "server": "193.168.172.173",
+      "server_port": 45500,
+      "tag": "1.hysteria_",
+      "tls": {
+        "alpn": [
+          "h3"
+        ],
+        "enabled": true,
+        "insecure": true,
+        "server_name": "www.rule.io"
+      },
+      "type": "hysteria2"
+    },
+    {
+      "password": "hq2rib0O6X",
       "server": "193.168.172.40",
+      "server_port": 45500,
+      "tag": "2.hysteria_",
+      "tls": {
+        "alpn": [
+          "h3"
+        ],
+        "enabled": true,
+        "insecure": true,
+        "server_name": "www.rule.io"
+      },
+      "type": "hysteria2"
+    },
+    {
+      "password": "hq2rib0O6X",
+      "server": "45.91.171.101",
+      "server_port": 45500,
+      "tag": "3.hysteria_",
+      "tls": {
+        "alpn": [
+          "h3"
+        ],
+        "enabled": true,
+        "insecure": true,
+        "server_name": "www.rule.io"
+      },
+      "type": "hysteria2"
+    },
+    {
+      "password": "hq2rib0O6X",
+      "server": "193.168.172.173",
       "server_port": 20,
       "tag": "1.Hy_20",
+      "tls": {
+        "alpn": [
+          "h3"
+        ],
+        "enabled": true,
+        "insecure": true,
+        "server_name": "www.unscreen.com"
+      },
+      "type": "hysteria2"
+    },
+    {
+      "password": "hq2rib0O6X",
+      "server": "45.91.171.101",
+      "server_port": 20,
+      "tag": "2.Hy_20",
+      "tls": {
+        "alpn": [
+          "h3"
+        ],
+        "enabled": true,
+        "insecure": true,
+        "server_name": "www.unscreen.com"
+      },
+      "type": "hysteria2"
+    },
+    {
+      "password": "hq2rib0O6X",
+      "server": "193.168.172.40",
+      "server_port": 20,
+      "tag": "3.Hy_20",
       "tls": {
         "alpn": [
           "h3"
