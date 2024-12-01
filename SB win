@@ -1,0 +1,5 @@
+hysteria2://hq2rib0O6X@91.107.179.103:45515?sni=www.rule.io&alpn=h3&insecure=1#hysteria_ ♾
+hysteria2://hq2rib0O6X@193.168.172.173:45515?sni=www.rule.io&alpn=h3&insecure=1#hysteria_ ♾
+hysteria2://hq2rib0O6X@91.107.179.103:20?sni=www.unscreen.com&alpn=h3&insecure=1#Hy_20 ♾
+hysteria2://hq2rib0O6X@193.168.172.173:20?sni=www.unscreen.com&alpn=h3&insecure=1#Hy_20 ♾
+tuic://831e7cf7-5991-4fdb-d416-233beb0c866c:hq2rib0O6X@91.107.179.103:51856?sni=www.rule.io&alpn=h3&congestion_control=bbr&allowInsecure=1#tuic-51856 ♾
