@@ -114,14 +114,6 @@
       "type": "direct"
     },
     {
-      "tag": "dns-out",
-      "type": "dns"
-    },
-    {
-      "tag": "block",
-      "type": "block"
-    },
-    {
       "password": "hq2rib0O6X",
       "server": "193.168.172.173",
       "server_port": 45500,
