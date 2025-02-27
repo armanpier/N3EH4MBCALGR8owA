@@ -52,13 +52,12 @@
   },
   "inbounds": [
     {
-      "address": [],
+      "address": [
+        "172.19.0.1/30",
+        "fdfe:dcba:9876::1/126"
+      ],
       "auto_route": true,
       "endpoint_independent_nat": false,
-      "exclude_package": [
-        "ir.mci.ecareapp",
-        "com.myirancell"
-      ],
       "mtu": 9000,
       "platform": {
         "http_proxy": {
@@ -67,7 +66,6 @@
           "server_port": 2080
         }
       },
-      "sniff": true,
       "stack": "system",
       "strict_route": false,
       "type": "tun"
@@ -75,7 +73,6 @@
     {
       "listen": "127.0.0.1",
       "listen_port": 2080,
-      "sniff": true,
       "type": "mixed",
       "users": []
     }
