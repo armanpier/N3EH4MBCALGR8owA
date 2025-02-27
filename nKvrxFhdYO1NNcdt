@@ -28,7 +28,7 @@
     ],
     "servers": [
       {
-        "address": "tcp://1.1.1.1",
+        "address": "tcp://8.8.4.4",
         "address_resolver": "local-dns",
         "detour": "proxy",
         "tag": "proxy-dns"
@@ -52,10 +52,7 @@
   },
   "inbounds": [
     {
-      "address": [
-        "172.19.0.1/30",
-        "fdfe:dcba:9876::1/126"
-      ],
+      "address": [],
       "auto_route": true,
       "endpoint_independent_nat": false,
       "exclude_package": [
@@ -89,9 +86,7 @@
         "auto",
         "direct",
         "1.hysteria_",
-        "2.hysteria_",
-        "1.Hy_20",
-        "2.Hy_20"
+        "1.Hy_20"
       ],
       "tag": "proxy",
       "type": "selector"
@@ -100,9 +95,7 @@
       "interval": "10m",
       "outbounds": [
         "1.hysteria_",
-        "2.hysteria_",
-        "1.Hy_20",
-        "2.Hy_20"
+        "1.Hy_20"
       ],
       "tag": "auto",
       "tolerance": 50,
@@ -130,39 +123,9 @@
     },
     {
       "password": "hq2rib0O6X",
-      "server": "45.91.171.101",
-      "server_port": 45500,
-      "tag": "2.hysteria_",
-      "tls": {
-        "alpn": [
-          "h3"
-        ],
-        "enabled": true,
-        "insecure": true,
-        "server_name": "www.rule.io"
-      },
-      "type": "hysteria2"
-    },
-    {
-      "password": "hq2rib0O6X",
       "server": "193.168.172.173",
       "server_port": 20,
       "tag": "1.Hy_20",
-      "tls": {
-        "alpn": [
-          "h3"
-        ],
-        "enabled": true,
-        "insecure": true,
-        "server_name": "www.unscreen.com"
-      },
-      "type": "hysteria2"
-    },
-    {
-      "password": "hq2rib0O6X",
-      "server": "45.91.171.101",
-      "server_port": 20,
-      "tag": "2.Hy_20",
       "tls": {
         "alpn": [
           "h3"
@@ -195,10 +158,15 @@
     ],
     "rules": [
       {
+        "action": "sniff"
+      },
+      {
+        "action": "route",
         "clash_mode": "Direct",
         "outbound": "direct"
       },
       {
+        "action": "route",
         "clash_mode": "Global",
         "outbound": "proxy"
       },
