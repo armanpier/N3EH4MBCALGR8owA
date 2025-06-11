@@ -34,7 +34,7 @@
     ],
     "servers": [
       {
-        "address": "tcp://8.8.4.4",
+        "address": "tcp://8.8.8.8",
         "address_resolver": "local-dns",
         "detour": "proxy",
         "tag": "proxy-dns"
@@ -108,7 +108,7 @@
       "type": "direct"
     },
     {
-      "password": "hq2rib0O6Xu",
+      "password": "hq2rib0O6X",
       "server": "185.139.228.195",
       "server_port": 45500,
       "tag": "1.hysteria_",
