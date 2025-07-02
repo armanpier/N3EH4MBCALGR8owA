@@ -1,4 +1,82 @@
-vless://0cd3f95b-4d42-4711-8f6a-367546362f91@94.182.149.137:4056?security=&encryption=none&host=telewebion.com&headerType=http&type=tcp#%F0%9F%94%92%20VL-TCP-NONE%20%F0%9F%87%AE%F0%9F%87%B7%20IR-94.182.149.137%3A4056
-vless://0132166f-e702-48ed-a9e7-b07af768faf8@185.207.197.251:8880?path=%2FTelegram%F0%9F%87%A8%F0%9F%87%B3%20%40WangCai2%20%2F%3Fed%3D2560fp%3Dchrome&security=&encryption=none&host=cf.d3z.net&type=ws#%F0%9F%94%92%20VL-WS-NA%20%F0%9F%87%B3%F0%9F%87%B1%20NL-185.207.197.251%3A8880
-vless://d342d11e-d424-4583-b36e-524ab1f0afa4@141.101.121.107:2053?path=%2F%3Fed%3D2048&security=tls&encryption=none&host=1749734195126.wk.by.ktff.ssl.com.kokk.cn.aliyun.cdnktff.pp.ua&fp=randomized&type=ws&sni=1749734195126.wk.by.ktff.ssl.com.kokk.cn.aliyun.cdnktff.pp.ua#%F0%9F%94%92%20VL-WS-TLS%20%F0%9F%8F%B4%E2%80%8D%E2%98%A0%EF%B8%8F%20NA-141.101.121.107%3A2053
-vmess://ewogICJhZGQiOiAiOTIuMTE0LjUxLjIxNiIsCiAgImFpZCI6IDAsCiAgImlkIjogIjUyNTFlMTg3LWExOWQtNDAzNS1hMDdlLTJkZTlhZjBiZmZjYiIsCiAgIm5ldCI6ICJ0Y3AiLAogICJwb3J0IjogNTAzMCwKICAicHMiOiAidm1lc3MtMjc0NzMg4pm+IiwKICAidGxzIjogIm5vbmUiLAogICJ2IjogMgp9
+{
+  "inbounds": [
+    {
+      "address": [
+        "172.19.0.1/30",
+        "fdfe:dcba:9876::1/126"
+      ],
+      "auto_route": true,
+      "endpoint_independent_nat": false,
+      "mtu": 9000,
+      "platform": {
+        "http_proxy": {
+          "enabled": true,
+          "server": "127.0.0.1",
+          "server_port": 2080
+        }
+      },
+      "stack": "system",
+      "strict_route": false,
+      "type": "tun"
+    },
+    {
+      "listen": "127.0.0.1",
+      "listen_port": 2080,
+      "type": "mixed",
+      "users": []
+    }
+  ],
+  "outbounds": [
+    {
+      "outbounds": [
+        "auto",
+        "direct",
+        "1.vmess-27473"
+      ],
+      "tag": "proxy",
+      "type": "selector"
+    },
+    {
+      "interval": "10m",
+      "outbounds": [
+        "1.vmess-27473"
+      ],
+      "tag": "auto",
+      "tolerance": 50,
+      "type": "urltest",
+      "url": "http://www.gstatic.com/generate_204"
+    },
+    {
+      "tag": "direct",
+      "type": "direct"
+    },
+    {
+      "multiplex": {},
+      "server": "92.114.51.216",
+      "server_port": 5030,
+      "tag": "1.vmess-27473",
+      "transport": {},
+      "type": "vmess",
+      "uuid": "5251e187-a19d-4035-a07e-2de9af0bffcb"
+    }
+  ],
+  "route": {
+    "auto_detect_interface": true,
+    "final": "proxy",
+    "rules": [
+      {
+        "action": "sniff"
+      },
+      {
+        "action": "route",
+        "clash_mode": "Direct",
+        "outbound": "direct"
+      },
+      {
+        "action": "route",
+        "clash_mode": "Global",
+        "outbound": "proxy"
+      }
+    ]
+  }
+}
