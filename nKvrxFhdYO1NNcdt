@@ -57,7 +57,9 @@
       "tag": "1.vmess-27473",
       "transport": {},
       "type": "vmess",
-      "uuid": "5251e187-a19d-4035-a07e-2de9af0bffcb"
+      "uuid": "5251e187-a19d-4035-a07e-2de9af0bffcb",
+      "downlink_speed": "10 Mbps",
+      "uplink_speed": "5 Mbps"
     }
   ],
   "route": {
