@@ -32,7 +32,7 @@
         "detour": "proxy",
         "server": "1.1.1.1",
         "tag": "proxy-dns",
-        "type": "udp"
+        "type": "tcp"
       },
       {
         "address": "local",
@@ -44,7 +44,7 @@
         "detour": "direct",
         "server": "8.8.8.8",
         "tag": "direct-dns",
-        "type": "udp"
+        "type": "tcp"
       }
     ],
     "strategy": "prefer_ipv4"
