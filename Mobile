@@ -1,8 +1,171 @@
-vless://83f03646-fb28-44cc-9d2c-8853f6c09285@104.17.162.123:8443?path=%2F%3Fed%3D%23TELEGRAM-MARAMBASHI_MARAMBASHI_MARAMBASHI_MARAMBASHI_MARAMBASHI%3Fed%3D512&security=tls&alpn=http%2F1.1&encryption=none&host=r4fnviw9jl4i4rx.zjde5.de5.net&fp=random&type=ws&sni=r4fnviw9jl4i4rx.zjde5.de5.net#%F0%9F%94%A5%20Telegram%3A%20%40wiki_tajrobe
-vless://4525c260-df3c-4f62-b8f1-f4f5f305694b@66.81.247.155:443?path=%2F%3Fed%3D%23TELEGRAM-MARAMBASHI_MARAMBASHI_MARAMBASHI_MARAMBASHI_MARAMBASHI%3Fed%3D512&security=tls&encryption=none&host=yyzsuabw9e3qd5ud7ihi5dxm96oglnsvr83cjojnm1efncfhr9ucordq.zjde5.de5.net&fp=chrome&type=ws&sni=yyzsuabw9e3qd5ud7ihi5dxm96oglnsvr83cjojnm1efncfhr9ucordq.zjde5.de5.net#%F0%9F%94%A5%20Telegram%3A%20%40wiki_tajrobe
-vless://83f03646-fb28-44cc-9d2c-8853f6c09285@104.17.162.123:8443?path=%2F%3Fed%3D%23TELEGRAM-MARAMBASHI_MARAMBASHI_MARAMBASHI_MARAMBASHI_MARAMBASHI%3Fed%3D512&security=tls&alpn=http%2F1.1&encryption=none&host=r4fnviw9jl4i4rx.zjde5.de5.net&fp=random&type=ws&sni=r4fnviw9jl4i4rx.zjde5.de5.net#%F0%9F%94%A5%20Telegram%3A%20%40wiki_tajrobe
-vless://396c904b-4b62-4334-b793-ee25fc0c61cc@188.114.96.3:443?path=%2FeyJqdW5rIjoiTHczMWlhREZIb0ljUDhoaCIsInByb3RvY29sIjoidmwiLCJtb2RlIjoicHJveHlpcCIsInBhbmVsSVBzIjpbXX0%3D%3Fed%3D2560&security=tls&encryption=none&host=8vmU06cxdz59m931xnREgj8qpnoq1-06.pages.dev&type=ws&sni=pages.dev#%F0%9F%94%A5%20Telegram%3A%20%40wiki_tajrobe
-vless://4525c260-df3c-4f62-b8f1-f4f5f305694b@66.81.247.155:443?path=%2F%3Fed&security=tls&encryption=none&host=yyzsuabw9e3qd5ud7ihi5dxm96oglnsvr83cjojnm1efncfhr9ucordq.zjde5.de5.net&fp=chrome&type=ws&sni=yyzsuabw9e3qd5ud7ihi5dxm96oglnsvr83cjojnm1efncfhr9ucordq.zjde5.de5.net#%F0%9F%94%A5%20Telegram%3A%20%40wiki_tajrobe
-vless://ae0a43bc-6189-456e-9b8a-a93f39af336e@38.180.144.156:8443?security=reality&encryption=none&pbk=76Cfr5qNl9BCrSb6jdkrgj0HbwfyCwj4oF6JJVhKD0s&headerType=none&fp=safari&type=tcp&flow=xtls-rprx-vision&sni=www.microsoft.com&sid=42d7234d875308a2#%F0%9F%94%A5%20Telegram%3A%20%40wiki_tajrobe
-vless://83f03646-fb28-44cc-9d2c-8853f6c09285@104.17.162.123:8443?path=%2F%3Fed%3D%23TELEGRAM-MARAMBASHI_MARAMBASHI_MARAMBASHI_MARAMBASHI_MARAMBASHI%3Fed%3D512&security=tls&alpn=http%2F1.1&encryption=none&host=r4fnviw9jl4i4rx.zjde5.de5.net&fp=random&type=ws&sni=r4fnviw9jl4i4rx.zjde5.de5.net#%F0%9F%94%A5%20Telegram%3A%20%40wiki_tajrobe
-vless://85d5cda0-9989-4802-9b48-3348b27de493@109.94.164.83:4040?flow=xtls-rprx-vision&type=tcp&security=reality&pbk=VODSE4nnfte9VesWVVftk0ijokczs6I4hn5qX7Q72mY&sid=df89&fp=edge&sni=mtserver.ir#vless-TR_melli
+{
+  "inbounds": [
+    {
+      "address": [
+        "172.19.0.1/30",
+        "fdfe:dcba:9876::1/126"
+      ],
+      "auto_route": true,
+      "endpoint_independent_nat": false,
+      "mtu": 9000,
+      "platform": {
+        "http_proxy": {
+          "enabled": true,
+          "server": "127.0.0.1",
+          "server_port": 2080
+        }
+      },
+      "stack": "system",
+      "strict_route": false,
+      "type": "tun"
+    },
+    {
+      "listen": "127.0.0.1",
+      "listen_port": 2080,
+      "type": "mixed",
+      "users": []
+    }
+  ],
+  "outbounds": [
+    {
+      "outbounds": [
+        "auto",
+        "direct",
+        "1.vmess-_TR",
+        "1.vless-TR_melli",
+        "1.hysteria2TR-BACK",
+        "1.hysteria2-2TR_FRP"
+      ],
+      "tag": "proxy",
+      "type": "selector"
+    },
+    {
+      "interval": "10m",
+      "outbounds": [
+        "1.vmess-_TR",
+        "1.vless-TR_melli",
+        "1.hysteria2TR-BACK",
+        "1.hysteria2-2TR_FRP"
+      ],
+      "tag": "auto",
+      "tolerance": 50,
+      "type": "urltest",
+      "url": "http://www.gstatic.com/generate_204"
+    },
+    {
+      "tag": "direct",
+      "type": "direct"
+    },
+    {
+      "alter_id": 0,
+      "multiplex": {},
+      "server": "109.94.164.83",
+      "server_port": 8080,
+      "tag": "1.vmess-_TR",
+      "transport": {},
+      "type": "vmess",
+      "uuid": "5251e187-a19d-4035-a07e-2de9af0bffcb"
+    },
+    {
+      "flow": "xtls-rprx-vision",
+      "multiplex": {},
+      "server": "109.94.164.83",
+      "server_port": 4040,
+      "tag": "1.vless-TR_melli",
+      "tls": {
+        "enabled": true,
+        "reality": {
+          "enabled": true,
+          "public_key": "VODSE4nnfte9VesWVVftk0ijokczs6I4hn5qX7Q72mY",
+          "short_id": ""
+        },
+        "server_name": "mtserver.ir",
+        "utls": {
+          "enabled": true,
+          "fingerprint": "edge"
+        }
+      },
+      "transport": {},
+      "type": "vless",
+      "uuid": "5251e187-a19d-4035-a07e-2de9af0bffcb"
+    },
+    {
+      "password": "XSeypst9qS",
+      "server": "109.94.164.83",
+      "server_port": 2020,
+      "tag": "1.hysteria2TR-BACK",
+      "tls": {
+        "certificate": [
+          "-----BEGIN CERTIFICATE-----",
+          "MIIC+zCCAeOgAwIBAgIRAIOOgECPCl4oFFgk2p41Tc0wDQYJKoZIhvcNAQELBQAw",
+          "EzERMA8GA1UEAxMIbGlhcmEuaXIwHhcNMjUwNzE0MjI0MzEzWhcNMjYwNzE0MjM0",
+          "MzEzWjATMREwDwYDVQQDEwhsaWFyYS5pcjCCASIwDQYJKoZIhvcNAQEBBQADggEP",
+          "ADCCAQoCggEBANi30IQmVmd354tbb+YTYg7z2LfarmWEe9Joq8I0hs6z4NeqvVTf",
+          "d2+G13OPVthTVKBuNTM9jX5HQzc53htfWQxGP3/nu5Aam1ivyZ6r89SZoFrZH1WK",
+          "Z0PMO+G9PmIH6BHNuIt/Hx6X2iMzu20LJe40DiRl9xb53JlvV0c2obIVkUdyDsP2",
+          "XJEJ2cBGxNC4FzlfHooTOCJzx1uz3kNmWbgYUFJ4E1OQv1AlVXsHaZFe4Aa5cVQ0",
+          "s2Aakn4wrI07n57I0rYc9NGRdsWQkDu4Craf8bXbM782uUb09WQJjv47rgNo51DB",
+          "SGTSVGyjxvDmjOXfMjP8uTZ3jbkHxE7FeCUCAwEAAaNKMEgwDgYDVR0PAQH/BAQD",
+          "AgWgMBMGA1UdJQQMMAoGCCsGAQUFBwMBMAwGA1UdEwEB/wQCMAAwEwYDVR0RBAww",
+          "CoIIbGlhcmEuaXIwDQYJKoZIhvcNAQELBQADggEBAKty1Xk5QcMSSQJs8T5+ZTV2",
+          "skccSkPtEaMj3v98sS3hBC2D6Ebq4G9989AOisQ4uGNHJKc5sYgSNPQ8YbzkfmfI",
+          "2TzqIKOF5upz27kyB8rudwidM/CetWtGciyz+xjDmJZpG+tz6bG03K4RwquuDK7x",
+          "6s7JUzPJDDz1NJWfCuwg607dS9sB6CsBwi4xFwvZfuIIm6AxNePWf9giJPMOK4OI",
+          "hBFz298F1699Ml0lr4zP55nB7hV7fOeAgF4wUQqpyBK9GmsCvkHgSlZjMYPVjCgY",
+          "gPXJqSiI9lT0NMzMjoFV9WAaQTZ0WS0nfAcqViG+ot9zYZ/qMRswMojGAV3JkLs=",
+          "-----END CERTIFICATE-----"
+        ],
+        "enabled": true,
+        "insecure": true,
+        "server_name": "github.io"
+      },
+      "type": "hysteria2"
+    },
+    {
+      "password": "XSeypst9qS",
+      "server": "109.94.164.83",
+      "server_port": 2525,
+      "tag": "1.hysteria2-2TR_FRP",
+      "tls": {
+        "certificate": [
+          "-----BEGIN CERTIFICATE-----",
+          "MIIC+zCCAeOgAwIBAgIRAIOOgECPCl4oFFgk2p41Tc0wDQYJKoZIhvcNAQELBQAw",
+          "EzERMA8GA1UEAxMIbGlhcmEuaXIwHhcNMjUwNzE0MjI0MzEzWhcNMjYwNzE0MjM0",
+          "MzEzWjATMREwDwYDVQQDEwhsaWFyYS5pcjCCASIwDQYJKoZIhvcNAQEBBQADggEP",
+          "ADCCAQoCggEBANi30IQmVmd354tbb+YTYg7z2LfarmWEe9Joq8I0hs6z4NeqvVTf",
+          "d2+G13OPVthTVKBuNTM9jX5HQzc53htfWQxGP3/nu5Aam1ivyZ6r89SZoFrZH1WK",
+          "Z0PMO+G9PmIH6BHNuIt/Hx6X2iMzu20LJe40DiRl9xb53JlvV0c2obIVkUdyDsP2",
+          "XJEJ2cBGxNC4FzlfHooTOCJzx1uz3kNmWbgYUFJ4E1OQv1AlVXsHaZFe4Aa5cVQ0",
+          "s2Aakn4wrI07n57I0rYc9NGRdsWQkDu4Craf8bXbM782uUb09WQJjv47rgNo51DB",
+          "SGTSVGyjxvDmjOXfMjP8uTZ3jbkHxE7FeCUCAwEAAaNKMEgwDgYDVR0PAQH/BAQD",
+          "AgWgMBMGA1UdJQQMMAoGCCsGAQUFBwMBMAwGA1UdEwEB/wQCMAAwEwYDVR0RBAww",
+          "CoIIbGlhcmEuaXIwDQYJKoZIhvcNAQELBQADggEBAKty1Xk5QcMSSQJs8T5+ZTV2",
+          "skccSkPtEaMj3v98sS3hBC2D6Ebq4G9989AOisQ4uGNHJKc5sYgSNPQ8YbzkfmfI",
+          "2TzqIKOF5upz27kyB8rudwidM/CetWtGciyz+xjDmJZpG+tz6bG03K4RwquuDK7x",
+          "6s7JUzPJDDz1NJWfCuwg607dS9sB6CsBwi4xFwvZfuIIm6AxNePWf9giJPMOK4OI",
+          "hBFz298F1699Ml0lr4zP55nB7hV7fOeAgF4wUQqpyBK9GmsCvkHgSlZjMYPVjCgY",
+          "gPXJqSiI9lT0NMzMjoFV9WAaQTZ0WS0nfAcqViG+ot9zYZ/qMRswMojGAV3JkLs=",
+          "-----END CERTIFICATE-----"
+        ],
+        "enabled": true,
+        "insecure": true,
+        "server_name": "github.io"
+      },
+      "type": "hysteria2"
+    }
+  ],
+  "route": {
+    "auto_detect_interface": true,
+    "final": "proxy",
+    "rules": [
+      {
+        "action": "sniff"
+      },
+      {
+        "action": "route",
+        "clash_mode": "Direct",
+        "outbound": "direct"
+      }
+    ]
+  }
+}
