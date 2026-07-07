@@ -1,3 +1,257 @@
-hysteria2://XSeypst9qS@194.116.236.209:7070?sni=github.io&fastopen=0&security=tls&insecure=1#hysteria2-42963_TR
-hysteria2://XSeypst9qS@107.181.134.210:7070?fastopen=0&security=tls&insecure=1&sni=github.io#hysteria2-42963_UK
-vless://5251e187-a19d-4035-a07e-2de9af0bffcb@109.94.164.83:8585?encryption=none&security=none&type=tcp&headerType=none#Vless--tunnTR
+[
+  {
+    "dns": {
+      "queryStrategy": "UseIP",
+      "servers": [
+        {
+          "address": "8.8.8.8",
+          "skipFallback": false
+        }
+      ],
+      "tag": "dns_out"
+    },
+    "inbounds": [
+      {
+        "port": 10808,
+        "protocol": "mixed",
+        "settings": {
+          "auth": "noauth",
+          "udp": true,
+          "userLevel": 8
+        },
+        "sniffing": {
+          "destOverride": [
+            "http",
+            "tls",
+            "quic",
+            "fakedns"
+          ],
+          "enabled": true
+        },
+        "tag": "mixed"
+      },
+      {
+        "port": 10809,
+        "protocol": "http",
+        "settings": {
+          "userLevel": 8
+        },
+        "tag": "http"
+      }
+    ],
+    "log": {
+      "loglevel": "warning"
+    },
+    "outbounds": [
+      {
+        "protocol": "vless",
+        "tag": "proxy",
+        "streamSettings": {
+          "network": "xhttp",
+          "realitySettings": {
+            "fingerprint": "edge",
+            "mldsa65Verify": "v5IM0UBsQo5EeF6siEl3zxS2WK9Wur0mxoXmrn_k5p_snlKv7-9vgNNjfQULO1WizXx39HBmIS6U-XyCzQNBzCmyFKvm5Pgoft0xvuJ9I3uDGjHEbCQvEqZDXaREz85OCCuZ3Sz-yQBQacaNIq1rYU2QJ01VkC183wYZY2NQOaRVy439WFtwO9z8Y0Ko3PyFZSZHGL8PbnVpkSrssFZLNZp88lSnaYMHR16ho6DLjRaQghE0I7cBvPUU09HwfFQtKdDjWQk8CuPAQcMFk4I3L-8VnJcVUpL9nMJqunmIFWFEuzZRHnNrEZcJlfhaUG-pR93mbl90hK99pWuKaBsyem-ivGXOChIL9YKUItmQktU-iAtwcpeqa6d9MP4qX-rFAq7hVWmjZgzySpaCwxpFlBBIMC-imp8SDXPLwpxEnuirf8F0zMc9_fFX3OIX7BAOqXW12lrJwh2SPCOB5ztXUamvTXlrNsoU3tkiGyLD6qiLNtHc4h9MhyGHk7OSmW1iqVwzO-oL9Yl-hA1hNeDcxWv4rUjF7Nw566b-Q_FZZj1MIKfPt4wcTYAiHqqLGkWBnX4ue54zcXtvGB08LVP0tF3mq9dPPO3bbV_q1y9vdwKq0BMhMwnKoKyohDug4ULlriNofVoMptZyVIs7xpuRPIYSIdlsZHGEkty1yTtuOpWaWjDdtksLP7ohxcMwwtDDxl6baJDmx_NgNzlagfwp5D8_GDTeWgSiM2EUTG6Ed_lUEQ6qKLZZklF9ii3X0inHv92oSrTF9hKcV8g1fHRGHKY_q7gmBFwfbUUOXFfFLBOHua8wM4siKyib9K9GUrnMue4JtidgaW_koeWwDMPId9dGZhE_T86_1GcZ6Esufal65laMWjYx4_yGcWKkLqByIDd5B2DsJXUTMHsUj8_UKVUDhIH1hppveQ0MYPesEJ19Xb1-O6WNfqRRLLzGWYdiJ4TcyxBlmjPI_-YnUfhTIk-KDPAzkv-unfazMCHLxSPuSg4qLkUJcxGWZRq1vsrBWIUqfVnO8zWFcmnvt4EbdIarvPDU-juTAFAtObPTy6YwQxJ9blVQlOpHsPxhU9sctYdvL8h3P3S1q4fRF-NN1wV_VwSQdtDvP7koSn0ieBe1AItxeOMFcnTAzSb135bf20rT3iBVcx16_ky06uCduxDvaPvT92SrVT9cMtLygyXK8agT15PPyH169hmtQFQUJVP72FB_9YfGGJoATBKmE9IVT6Lrzlb-irQuga6pRGaRY7zuITjVmE6ryvoFeDcFSZ55sW9ZRtTVZdKXQXjk0mND4qy9RQhLy1CQzuGDg_T2rQv1xlReLir5kSmpbUhPM7PcZnOHi2dBTS4yOTI1IlG6Lilxu-hBF87mhdw91EV5ZgoNLWl2bVo-jRTCpJ5ptXCZWImDEFapS-G2hunrIRMLNto5nSHGwOlq1izcEIE4V9TJ90f-pJKXH7PzGMrFhNtE0le24oTr_qULtbc3RhqF4ddLKIhM5c88gLQFs8vI0I96wNw67mHcma9jgpaXmVTAGOj7kiVZxAfPz3VxRQTY661gvB9ZccbRUJsYStAIixD1DXcWOMz5uWgQ3aUxUW8-l_8vrCxv5uZRm2iES-YbD5tVCI_SODGtEHogw5d98U0GYC7Z5DfXxCe2zlXB3xfei1AHmA6E_Scn7CnjE-MO1ZWwrGYr8UvWoLdQeWnhyc7pQtx7cWC5HUInFiHQ-Ja_UskeSkxyID1d86DEQrlnw6K-52JlX3ctfvCgt3jPnVfJuyOexp8NU6h_3fFL6u0B54SoDnulnX0k67-aoozSvW4x_lhyQifLEtsRlPNX2S3miOzh3wKLhtxBinfS8ej0meH8UwoppQiBmD9ioKFwBD1TSeof7rSP-V52Yv6uBLSv3cCirnZx8HekInxfmjHc6TXscx3MMFFVOWK3gjhOi9Z32xOhOtKJ575nF65x59KBs4_P8qiJs--2ieAu3B8RM76tVuRp72jikY0cIJyjFMDg8qG7iIEaLDM2B29GxEh4O_SlYZlYRdv2op6NHOQFQjsCHaSHASrhNm5m_27k55NT8tS4CzX6HZUYYpKDCvJr4G-A1P0ks7PpAOs-0GKWtfWx4688QIfGNHF2AXG7hMMR3f6_wm1bsJcT7zGjXKKMO6RImQhLix7F3mhpCbtcZibNGhVvh1_IoGSNcHjTiI3Eq94LS75FWfZ_4r4h9cjML_rze83MyMM01e4Tsx5FGIHrIhlBJf5Mv4LMz3Ce8F2KhnAtMTpyJ_qcE_6f7AeUrq16PI5XcY017Y_z2LTyXQNIhRW4xVIg3zxQjlNxX5RSVCimH-4ouEXOeY02XKFljTPpfA-VUEJT9yCT4X2fauskknKjLVq4NDMkrPxPj2RnyBUh72mSG2Is6-hZb9phnkbFONaaQmazacvgZcgKnwqJ6i1sLGiS-jePT8ELSMhK6wBcieiGFpjvU9L-IyRN9raVJPTA_cpLiiVAj6ItcSSWhBJQFvo5sli6M6vMED5bh9On5_qf7vvyeBKlrEnO9xUb9j7CW63vCFiY3MdcYO2g3pEtYjeMwcOYARDa3ILfPoLrmwLA3dEC32Q",
+            "publicKey": "Dh8tPssZKBHIEuB2zzt1ERvJmMig7tjN3YtUQmft9Rg",
+            "serverName": "sribsrch.ecom.samsung.com",
+            "shortId": "1179",
+            "show": false,
+            "spiderX": "/EDvI1btAeGruv3d"
+          },
+          "security": "reality",
+          "xhttpSettings": {
+            "host": "",
+            "mode": "auto",
+            "path": "/api-in/download/",
+            "xPaddingBytes": "100-1000"
+          }
+        },
+        "settings": {
+          "address": "193.38.34.181",
+          "encryption": "mlkem768x25519plus.native.0rtt.2LRMqxrgulMIhh7cDCiEn52OUUbVwwtAyze26QtOQiM",
+          "id": "63c65967-9777-4a4d-b6f3-e3918c0ee728",
+          "level": 8,
+          "port": 15902
+        }
+      },
+      {
+        "protocol": "freedom",
+        "settings": {
+          "domainStrategy": "AsIs",
+          "noises": [],
+          "redirect": ""
+        },
+        "tag": "direct"
+      },
+      {
+        "protocol": "blackhole",
+        "settings": {
+          "response": {
+            "type": "http"
+          }
+        },
+        "tag": "block"
+      }
+    ],
+    "policy": {
+      "levels": {
+        "8": {
+          "connIdle": 300,
+          "downlinkOnly": 1,
+          "handshake": 4,
+          "uplinkOnly": 1
+        }
+      },
+      "system": {
+        "statsOutboundDownlink": true,
+        "statsOutboundUplink": true
+      }
+    },
+    "remarks": "reality-admin",
+    "routing": {
+      "domainStrategy": "AsIs",
+      "rules": [
+        {
+          "network": "tcp,udp",
+          "outboundTag": "proxy",
+          "type": "field"
+        }
+      ]
+    },
+    "stats": {}
+  },
+  {
+    "dns": {
+      "queryStrategy": "UseIP",
+      "servers": [
+        {
+          "address": "8.8.8.8",
+          "skipFallback": false
+        }
+      ],
+      "tag": "dns_out"
+    },
+    "inbounds": [
+      {
+        "port": 10808,
+        "protocol": "mixed",
+        "settings": {
+          "auth": "noauth",
+          "udp": true,
+          "userLevel": 8
+        },
+        "sniffing": {
+          "destOverride": [
+            "http",
+            "tls",
+            "quic",
+            "fakedns"
+          ],
+          "enabled": true
+        },
+        "tag": "mixed"
+      },
+      {
+        "port": 10809,
+        "protocol": "http",
+        "settings": {
+          "userLevel": 8
+        },
+        "tag": "http"
+      }
+    ],
+    "log": {
+      "loglevel": "warning"
+    },
+    "outbounds": [
+      {
+        "protocol": "hysteria",
+        "tag": "proxy",
+        "streamSettings": {
+          "finalmask": {
+            "udp": [
+              {
+                "settings": {
+                  "password": "wiewxw4667j5xvyr"
+                },
+                "type": "salamander"
+              }
+            ]
+          },
+          "hysteriaSettings": {
+            "auth": "nniavtvi814ymhh2",
+            "masquerade": {
+              "content": "",
+              "dir": "",
+              "headers": {},
+              "insecure": false,
+              "rewriteHost": false,
+              "statusCode": 0,
+              "type": "",
+              "url": ""
+            },
+            "udpIdleTimeout": 60,
+            "version": 2
+          },
+          "network": "hysteria",
+          "security": "tls",
+          "tlsSettings": {
+            "alpn": [
+              "h3"
+            ],
+            "fingerprint": "chrome",
+            "serverName": "marka.onthepoint.live"
+          }
+        },
+        "settings": {
+          "address": "193.38.34.181",
+          "port": 32872,
+          "version": 2
+        }
+      },
+      {
+        "protocol": "freedom",
+        "settings": {
+          "domainStrategy": "AsIs",
+          "noises": [],
+          "redirect": ""
+        },
+        "tag": "direct"
+      },
+      {
+        "protocol": "blackhole",
+        "settings": {
+          "response": {
+            "type": "http"
+          }
+        },
+        "tag": "block"
+      }
+    ],
+    "policy": {
+      "levels": {
+        "8": {
+          "connIdle": 300,
+          "downlinkOnly": 1,
+          "handshake": 4,
+          "uplinkOnly": 1
+        }
+      },
+      "system": {
+        "statsOutboundDownlink": true,
+        "statsOutboundUplink": true
+      }
+    },
+    "remarks": "hy2",
+    "routing": {
+      "domainStrategy": "AsIs",
+      "rules": [
+        {
+          "network": "tcp,udp",
+          "outboundTag": "proxy",
+          "type": "field"
+        }
+      ]
+    },
+    "stats": {}
+  }
+]
